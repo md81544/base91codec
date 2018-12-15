@@ -117,7 +117,6 @@ void decode(std::vector<uint8_t>& out, const std::vector<uint8_t>& text)
     unsigned int nbits = 0;
     int val = -1;
 
-    //for (size_t len = text.size(); len--; ) {
     for ( auto c : text )
     {
         unsigned int d = dectab[c];
