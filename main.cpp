@@ -82,7 +82,7 @@ int main( int argc, char* argv[] )
             // encode
             std::vector<uint8_t> out;
             out.reserve( in.size() ) ; // it's going to be bigger but this avoids initial resizing
-            auto enc = base91::encode( out, in );
+            base91::encode( out, in );
             writeFile( out, args[3], args[1] == "-f" );
             return 0;
         }
@@ -91,7 +91,7 @@ int main( int argc, char* argv[] )
             // decode
             std::vector<uint8_t> out;
             out.reserve( in.size() ) ; // it's going to be a bit smaller
-            auto enc = base91::decode( out, in );
+            base91::decode( out, in );
             writeFile( out, args[3] );
             return 0;
         }

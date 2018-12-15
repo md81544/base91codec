@@ -35,9 +35,9 @@
 namespace base91
 {
 
-bool encode(std::vector<uint8_t>& out, const std::vector<uint8_t>& binary)
+void encode(std::vector<uint8_t>& out, const std::vector<uint8_t>& binary)
 {
-    const unsigned char enctab[91] = {
+    const uint8_t enctab[91] = {
         'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', //00..12
         'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', //13..25
         'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', //26..38
@@ -87,13 +87,12 @@ bool encode(std::vector<uint8_t>& out, const std::vector<uint8_t>& binary)
         }
     }
 
-    return true;
 }
 
 
-bool decode(std::vector<uint8_t>& out, const std::vector<uint8_t>& text) {
-
-    const unsigned char dectab[256] = {
+void decode(std::vector<uint8_t>& out, const std::vector<uint8_t>& text)
+{
+    const uint8_t dectab[256] = {
         91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91,
         91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91,
         91, 62, 91, 63, 64, 65, 66, 90, 67, 68, 69, 70, 71, 76, 72, 73,
@@ -148,7 +147,6 @@ bool decode(std::vector<uint8_t>& out, const std::vector<uint8_t>& text) {
     {
         out.push_back( char( queue | val << nbits ) );
     }
-    return true;
 }
 
 } // namespace base91
