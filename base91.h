@@ -1,6 +1,6 @@
 #pragma once
 
-// Base91 encoding is based on (heavily modified) code which is:
+// Base91 encoding is based on code which is:
 // copyright (c) 2011..2016 r-lyeh (https://github.com/r-lyeh), which in turn
 // is based on code by Joachim Henke {
 // Copyright (c) 2000-2006 Joachim Henke
